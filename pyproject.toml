@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=65.6"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "math_function_slothclaw"
+version = "0.0.1"
+authors = [
+  { name="slothclaw" },
+]
+description = "A small example package with math functions"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+# pytest configuration
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
+
+# tox configuration
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py38
+
+[testenv]
+deps =
+    -r requirements.txt
+    -r requirements_dev.txt
+commands =
+    pytest -v
+    flake8 src
+    mypy src
+"""
+
+# mypy configuration
+[[tool.mypy.overrides]]
+module = [
+    "requests",
+]
+ignore_missing_imports = true

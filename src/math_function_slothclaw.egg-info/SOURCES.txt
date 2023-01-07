@@ -1,0 +1,9 @@
+LICENSE.md
+README.md
+pyproject.toml
+src/math_function_slothclaw.egg-info/PKG-INFO
+src/math_function_slothclaw.egg-info/SOURCES.txt
+src/math_function_slothclaw.egg-info/dependency_links.txt
+src/math_function_slothclaw.egg-info/top_level.txt
+src/math_functions/__init__.py
+src/math_functions/fibonacci.py
